@@ -1,0 +1,13 @@
+# Visual Studio / .NET ignores
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.tmp
+*.log
+
+# Node / Angular ignores
+node_modules/
+dist/
+package-lock.json

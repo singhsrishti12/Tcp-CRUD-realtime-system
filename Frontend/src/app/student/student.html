@@ -1,0 +1,89 @@
+<nav class="navbar navbar-dark bg-primary mb-4">
+  <div class="container justify-content-center">
+    <span class="navbar-brand mb-0 h1">TCP CRUD Dashboard</span>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-6 mb-4">
+      <h5>Students</h5>
+
+      <table class="table table-bordered table-striped">
+        <thead class="table-light">
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let s of students">
+            <td>{{s.StudentId}}</td>
+            <td>{{s.Name}}</td>
+            <td>{{s.Email}}</td>
+          </tr>
+
+          <tr *ngIf="students.length === 0">
+            <td colspan="3" class="text-center">No students</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="col-md-6 mb-4">
+      <h5>Courses</h5>
+
+      <table class="table table-bordered table-striped">
+        <thead class="table-light">
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Credits</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let c of courses">
+            <td>{{c.CourseId}}</td>
+            <td>{{c.Title}}</td>
+            <td>{{c.Credits}}</td>
+          </tr>
+
+          <tr *ngIf="courses.length === 0">
+            <td colspan="3" class="text-center">No courses</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col">
+
+      <h5>Live Activity</h5>
+
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let log of logs">
+          {{log}}
+        </li>
+        <li class="list-group-item text-center" *ngIf="logs.length === 0">
+          No activity yet
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
