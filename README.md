@@ -3,14 +3,14 @@
 
 #  TCP CRUD Real-Time System
 
-A multi-client TCP server built in **C# (.NET)** that handles structured string-based commands to perform **CRUD operations** on Student and Course entities. Every database change is instantly broadcast to connected browser clients through a **WebSocket server**, while a **TypeScript/HTML dashboard** displays updates in real time.
+This project implements a multi-client TCP server that supports CRUD operations on a database with real-time updates broadcasted to connected WebSocket clients. The system allows multiple clients to connect simultaneously, send structured string commands, and receive updates in real-time whenever database records change.
 
 ---
 
 ## Tech Stack
 
-- **Server** — C# (.NET), TCP Sockets, WebSocket Server
-- **Frontend** — TypeScript, HTML, CSS (WebSocket dashboard)
+- **Server** — .NET(C#), TCP Sockets, WebSocket Server
+- **Frontend** — Angular (Websocket dashboard)
 - **Client** — C# TCP Client
 
 ---
@@ -19,9 +19,9 @@ A multi-client TCP server built in **C# (.NET)** that handles structured string-
 
 ```
 Tcp-CRUD-realtime-system/
-├── TcpServer/          # C# server (TCP + WebSocket)
-├── Frontend/           # TypeScript/HTML WebSocket dashboard
-└── TcpClient.cs        # Sample TCP client
+├── TcpServer/          # TCP and WebSocket Server
+├── Frontend/           # WebSocket dashboard
+└── TcpClient.cs        # TCP client
 ```
 
 ---
@@ -114,7 +114,7 @@ The server starts a TCP listener and a WebSocket server simultaneously.
 ```bash
 cd Frontend
 npm install
-npm start
+npm serve
 ```
 
 Open your browser and connect to the WebSocket to see live updates.
@@ -122,7 +122,7 @@ Open your browser and connect to the WebSocket to see live updates.
 ### 3. Run the TCP Client
 
 ```bash
-dotnet-script TcpClient.cs
+dotnet TcpClient.cs
 ```
 
 Or compile and run it as part of a .NET project. The client connects to the server and sends sample CRUD commands.
